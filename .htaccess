@@ -1,0 +1,22 @@
+# Block directory listing
+Options -Indexes
+
+# Set MIME types for 3D models
+AddType model/gltf-binary .glb
+AddType model/gltf-binary .gltf
+AddType model/vnd.usdz+zip .usdz
+
+# Enable CORS for 3D model files (needed for model-viewer)
+<FilesMatch "\.(glb|gltf|usdz)$">
+    Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+
+# Prevent access to sensitive files
+<FilesMatch "\.(sql|ini|log|sh|bat|cmd)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Custom error pages
+ErrorDocument 404 /AR_Furniture/index.php
+ErrorDocument 403 /AR_Furniture/index.php

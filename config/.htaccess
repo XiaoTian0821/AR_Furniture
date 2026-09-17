@@ -1,0 +1,8 @@
+# Block directory listing
+Options -Indexes
+
+# Block access to config directory
+<FilesMatch "\.(php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

@@ -1,0 +1,8 @@
+# Block directory listing
+Options -Indexes
+
+# Block execution of PHP files
+<FilesMatch "\.(php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

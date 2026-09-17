@@ -1,0 +1,14 @@
+# Block directory listing
+Options -Indexes
+
+# Block execution of PHP files
+<FilesMatch "\.(php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Allow access to GLB and GLTF files
+<FilesMatch "\.(glb|gltf)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
